@@ -1,0 +1,1000 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROAD TO マイクラカップ IN AIZU 2026</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap");
+
+      :root {
+        --mc-dark: #1a2a5e;
+        --mc-blue: #2550a7;
+        --mc-green: #5db12a;
+        --mc-green2: #3d8a1e;
+        --mc-brown: #7a4f2e;
+        --mc-gold: #ffcc00;
+        --mc-gold2: #e6a800;
+        --mc-teal: #c8eaf0;
+        --mc-light: #f0f8e8;
+        --mc-orange: #ff8c00;
+        --mc-red: #c0392b;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Noto Sans JP", sans-serif;
+        background: #f5f5f5;
+        color: #222;
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        position: relative;
+        background: var(--mc-dark);
+        text-align: center;
+        overflow: hidden;
+      }
+      .hero img.hero-img {
+        width: 100%;
+        max-width: 900px;
+        display: block;
+        margin: 0 auto;
+      }
+      .hero-badge {
+        background: var(--mc-dark);
+        color: #cce0ff;
+        font-size: 0.9rem;
+        font-weight: 700;
+        padding: 6px 0;
+        letter-spacing: 0.1em;
+      }
+
+      /* ===== SUBTITLE BAND ===== */
+      .subtitle-band {
+        background: var(--mc-gold);
+        color: var(--mc-dark);
+        text-align: center;
+        padding: 14px 20px;
+        font-size: 1.35rem;
+        font-weight: 900;
+        border-top: 4px solid var(--mc-gold2);
+        border-bottom: 4px solid var(--mc-gold2);
+        letter-spacing: 0.05em;
+      }
+      .subtitle-band span {
+        font-size: 1.05rem;
+        font-weight: 700;
+      }
+
+      /* ===== SECTION WRAPPER ===== */
+      .section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+
+      /* ===== INTRO ===== */
+      .intro-block {
+        background: #fff;
+        border: 4px solid var(--mc-brown);
+        border-radius: 4px;
+        padding: 24px 28px;
+        margin: 24px auto;
+        max-width: 900px;
+        position: relative;
+      }
+      .intro-block::before {
+        content: "";
+        position: absolute;
+        inset: 3px;
+        border: 2px dashed #c8a86e;
+        border-radius: 2px;
+        pointer-events: none;
+      }
+      .intro-block p {
+        line-height: 1.85;
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 12px;
+      }
+      .intro-block p:last-child {
+        margin-bottom: 0;
+      }
+      .intro-block .theme {
+        background: #fffbe6;
+        border-left: 5px solid var(--mc-gold);
+        padding: 10px 16px;
+        border-radius: 2px;
+        font-weight: 700;
+        color: #5a3d00;
+      }
+
+      /* ===== TARGET BAND ===== */
+      .target-band {
+        background: var(--mc-dark);
+        color: #fff;
+        text-align: center;
+        padding: 16px 20px;
+      }
+      .target-band .label {
+        display: inline-block;
+        background: var(--mc-green);
+        color: #fff;
+        font-weight: 900;
+        font-size: 0.9rem;
+        padding: 4px 14px;
+        border-radius: 2px;
+        margin-right: 14px;
+        letter-spacing: 0.1em;
+        vertical-align: middle;
+      }
+      .target-band .value {
+        font-size: 1.5rem;
+        font-weight: 900;
+        vertical-align: middle;
+      }
+      .target-band .note {
+        display: block;
+        font-size: 0.82rem;
+        color: #aac8ff;
+        margin-top: 4px;
+      }
+
+      /* ===== SECTION HEADING ===== */
+      .sec-heading {
+        background: var(--mc-green);
+        color: #fff;
+        padding: 2px 2px;
+        font-size: 1.1rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        border-left: 8px solid var(--mc-green2);
+        margin-bottom: 0;
+      }
+      .sec-heading.brown {
+        background: var(--mc-brown);
+        border-left-color: #4a2e16;
+      }
+      .sec-heading.navy {
+        background: var(--mc-dark);
+        border-left-color: #0d1a40;
+      }
+
+      /* ===== SCHEDULE TABLE ===== */
+      .schedule-wrap {
+        background: var(--mc-teal);
+        padding: 24px 16px 32px;
+      }
+      .schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border: 3px solid var(--mc-dark);
+        font-size: 0.95rem;
+      }
+      .schedule-table thead th {
+        background: var(--mc-dark);
+        color: #fff;
+        padding: 2px 12px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .schedule-table tbody tr:nth-child(odd) {
+        background: #eaf5ff;
+      }
+      .schedule-table tbody tr:nth-child(even) {
+        background: #fff;
+      }
+      .schedule-table tbody tr.worldlab {
+        background: #f5f5e8;
+      }
+      .schedule-table td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #c8dde8;
+        vertical-align: middle;
+      }
+      .schedule-table td.session-badge {
+        text-align: center;
+        white-space: nowrap;
+      }
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 3px;
+        font-weight: 900;
+        font-size: 0.82rem;
+        color: #fff;
+        white-space: nowrap;
+      }
+      .badge.s1 {
+        background: #2e7d32;
+      }
+      .badge.s2 {
+        background: #1565c0;
+      }
+      .badge.s3 {
+        background: #6a1b9a;
+      }
+      .badge.s4 {
+        background: #bf360c;
+      }
+      .badge.wl {
+        background: #78909c;
+      }
+      .schedule-table td.date {
+        font-weight: 900;
+        font-size: 1.05rem;
+        white-space: nowrap;
+      }
+      .schedule-table td.time {
+        white-space: nowrap;
+        color: #444;
+      }
+      .schedule-table td.venue {
+        color: #555;
+      }
+      .schedule-note {
+        margin-top: 12px;
+        padding: 10px 14px;
+        background: #fffbe6;
+        border: 1px solid #e0cc70;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        color: #5a4000;
+        line-height: 1.7;
+      }
+
+      /* ===== INFO GRID ===== */
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        border: 3px solid var(--mc-dark);
+      }
+      .info-cell {
+        background: #fff;
+        padding: 18px 20px;
+        border-right: 2px solid #c8dde8;
+        border-bottom: 2px solid #c8dde8;
+      }
+      .info-cell:nth-child(even) {
+        border-right: none;
+      }
+      .info-cell:last-child,
+      .info-cell:nth-last-child(2):nth-child(odd) {
+        border-bottom: none;
+      }
+      .info-cell .label {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .info-cell .value {
+        font-size: 1.25rem;
+        font-weight: 900;
+        color: var(--mc-dark);
+      }
+      .info-cell .value.free {
+        color: var(--mc-green2);
+        font-size: 1.6rem;
+      }
+      .info-cell .sub {
+        font-size: 0.8rem;
+        color: #666;
+        margin-top: 3px;
+      }
+
+      /* ===== CONDITIONS ===== */
+      .conditions-wrap {
+        background: #fff9ee;
+        padding: 24px 20px;
+      }
+      .conditions-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+      .important-badge {
+        background: var(--mc-red);
+        color: #fff;
+        font-weight: 900;
+        font-size: 0.9rem;
+        padding: 5px 6px;
+        border-radius: 3px;
+        letter-spacing: 0.05em;
+      }
+      .conditions-title {
+        font-size: 1.25rem;
+        font-weight: 900;
+        color: var(--mc-brown);
+      }
+      .conditions-list {
+        list-style: none;
+        padding: 0;
+      }
+      .conditions-list li {
+        padding: 3px 0 9px 28px;
+        border-bottom: 1px dotted #ddd;
+        position: relative;
+        font-size: 0.97rem;
+        line-height: 1.6;
+      }
+      .conditions-list li:last-child {
+        border-bottom: none;
+      }
+      .conditions-list li::before {
+        content: "●";
+        position: absolute;
+        left: 6px;
+        color: var(--mc-green2);
+        font-size: 0.9rem;
+      }
+      .no-pc-box {
+        background: #fff;
+        border: 2px dashed var(--mc-brown);
+        border-radius: 4px;
+        padding: 16px 20px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      .no-pc-box .title {
+        font-weight: 900;
+        color: var(--mc-brown);
+        font-size: 1rem;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .no-pc-box p {
+        font-size: 0.92rem;
+        line-height: 1.75;
+        color: #444;
+      }
+
+      /* ===== SESSION CARDS ===== */
+      .sessions-wrap {
+        background: var(--mc-teal);
+        padding: 24px 16px 32px;
+      }
+      .sessions-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 20px;
+      }
+      .session-card {
+        background: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        border: 3px solid var(--mc-dark);
+        display: flex;
+        flex-direction: column;
+      }
+      .session-card img {
+        display: block;
+        width: 80%;
+        height: auto;
+        margin: 12px auto 0;
+      }
+      .session-card-body {
+        padding: 6px 6px 8px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .session-num {
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 3px;
+        font-weight: 900;
+        font-size: 0.82rem;
+        color: #fff;
+        align-self: flex-start;
+      }
+      .session-date {
+        font-size: 1rem;
+        font-weight: 900;
+        color: var(--mc-dark);
+      }
+      .session-title {
+        font-size: 0.95rem;
+        font-weight: 900;
+        color: #222;
+        line-height: 1.4;
+      }
+      .session-desc {
+        font-size: 0.82rem;
+        color: #555;
+        line-height: 1.65;
+      }
+
+      /* ===== WHAT IS ===== */
+      .whatis-wrap {
+        background: #fff;
+        padding: 28px 20px;
+      }
+      .whatis-inner {
+        display: block;
+      }
+      .whatis-text {
+        flex: 1;
+      }
+      .whatis-text p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .whatis-text p:last-child {
+        margin-bottom: 0;
+      }
+      .mccup-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 16px;
+        padding: 10px 20px;
+        background: #fff;
+        border: 2px solid var(--mc-green2);
+        border-radius: 4px;
+        text-decoration: none;
+        color: var(--mc-green2);
+        font-weight: 700;
+        font-size: 0.9rem;
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+      .mccup-link:hover {
+        background: var(--mc-green2);
+        color: #fff;
+      }
+      .mccup-link:hover img {
+        filter: brightness(0) invert(1);
+      }
+      .mccup-link img {
+        height: 20px;
+        width: auto;
+      }
+
+      /* ===== CTA ===== */
+      .cta-block {
+        background: var(--mc-dark);
+        color: #fff;
+        text-align: center;
+        padding: 30px 20px 36px;
+      }
+      .cta-block .cta-title {
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--mc-gold);
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+      .cta-block .cta-sub {
+        font-size: 1rem;
+        color: #aac8ff;
+        margin-bottom: 20px;
+      }
+      .cta-deadline {
+        display: inline-block;
+        background: var(--mc-red);
+        color: #fff;
+        font-size: 1.3rem;
+        font-weight: 900;
+        padding: 12px 36px;
+        border-radius: 4px;
+        letter-spacing: 0.05em;
+        box-shadow: 0 4px 0 #7a0e0e;
+      }
+
+      /* ===== CONTACT ===== */
+      .contact-block {
+        background: #1a2a3a;
+        color: #ccd8e8;
+        padding: 20px;
+        font-size: 0.88rem;
+        line-height: 2;
+      }
+      .contact-block .org-name {
+        font-weight: 900;
+        font-size: 1rem;
+        color: var(--mc-gold);
+      }
+      .contact-block a {
+        color: #7fc6ff;
+        text-decoration: none;
+      }
+      .contact-block a:hover {
+        text-decoration: underline;
+      }
+      .organizer-line {
+        font-size: 0.78rem;
+        color: #8899aa;
+        margin-top: 6px;
+      }
+
+      /* ===== STICKY NAV ===== */
+      .sticky-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--mc-dark);
+        border-bottom: 3px solid var(--mc-gold);
+      }
+      .sticky-nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0;
+      }
+      .sticky-nav ul li a {
+        display: block;
+        padding: 11px 16px;
+        color: #cce0ff;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        transition:
+          background 0.15s,
+          color 0.15s;
+        white-space: nowrap;
+      }
+      .sticky-nav ul li a:hover {
+        background: var(--mc-gold);
+        color: var(--mc-dark);
+      }
+      .sticky-nav ul li:last-child a {
+        border-right: none;
+      }
+
+      /* ===== APPLY BUTTON ===== */
+      .apply-area {
+        background: var(--mc-dark);
+        text-align: center;
+        padding: 20px 16px;
+        border-bottom: 4px solid #0d1a40;
+      }
+      .apply-btn {
+        display: inline-block;
+        background: var(--mc-green2);
+        color: #fff;
+        font-size: 1.25rem;
+        font-weight: 900;
+        padding: 16px 52px;
+        border-radius: 4px;
+        text-decoration: none;
+        letter-spacing: 0.06em;
+        box-shadow: 0 5px 0 #1e5200;
+        transition:
+          transform 0.1s,
+          box-shadow 0.1s;
+        border: none;
+        cursor: pointer;
+      }
+      .apply-btn:hover {
+        transform: translateY(2px);
+        box-shadow: 0 3px 0 #1e5200;
+      }
+      .apply-btn:active {
+        transform: translateY(5px);
+        box-shadow: none;
+      }
+      .apply-deadline {
+        margin-top: 14px;
+        color: #cce0ff;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+
+      /* ===== PIXEL DIVIDER ===== */
+      .pixel-divider {
+        height: 16px;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--mc-green) 0px,
+          var(--mc-green) 16px,
+          var(--mc-green2) 16px,
+          var(--mc-green2) 32px
+        );
+      }
+      .pixel-divider.brown {
+        background: repeating-linear-gradient(
+          90deg,
+          var(--mc-brown) 0px,
+          var(--mc-brown) 16px,
+          #5c3820 16px,
+          #5c3820 32px
+        );
+      }
+
+      /* ===== WRAP SECTIONS ===== */
+      .bg-teal {
+        background: var(--mc-teal);
+      }
+      .bg-light {
+        background: var(--mc-light);
+      }
+      .bg-white {
+        background: #fff;
+      }
+      .padded {
+        padding: 0 16px;
+      }
+
+      .section-block {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- STICKY NAV -->
+    <nav class="sticky-nav">
+      <ul>
+        <li><a href="#section-about">イベント概要</a></li>
+        <li><a href="#section-schedule">開催日程</a></li>
+        <li><a href="#section-sessions">各回内容</a></li>
+        <li><a href="#section-whatis">マイクラカップとは</a></li>
+        <li><a href="#section-conditions">参加条件</a></li>
+        <li><a href="#section-apply">応募する</a></li>
+        <li><a href="#section-contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <img
+        class="hero-img"
+        src="assets/hero.png"
+        alt="ROAD TO マイクラカップ IN AIZU 2026"
+      />
+    </div>
+
+    <!-- SUBTITLE BAND -->
+    <div class="subtitle-band">第8回マイクラカップに、さぁ！応募しよう★</div>
+
+    <!-- APPLY BUTTON -->
+    <div id="section-apply" class="apply-area">
+      <a
+        class="apply-btn"
+        href="https://coderdojo-aizu.doorkeeper.jp/events/197520"
+        target="_blank"
+        >今すぐ申し込む</a
+      >
+      <p class="apply-deadline">応募締切：2026年6月26日（金）</p>
+    </div>
+
+    <!-- INTRO -->
+    <div id="section-about" class="bg-white padded" style="background: var(--mc-dark);">
+      <div class="intro-block section-block">
+        <p>
+          デジタル未来アート事業実行委員会はNPO法人Solarisと連携し、<strong>会津若松市の小中学生のマイクラカップへのエントリー</strong>をサポートします。
+        </p>
+        <p class="theme">
+          今年のテーマ：「みんなが輝く！β世代の未来のまち〜人口・年齢のバランスが変わる社会をどう生きる？〜」
+        </p>
+        <p style="margin-top: 12px">
+          人口が変わる社会で、テクノロジーを使って未来の街をデザインしましょう。<strong
+            >目指せ全国大会！</strong
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- TARGET -->
+    <div class="target-band">
+      <span class="label">対　象</span>
+      <span class="value">会津若松市内の小・中学生</span>
+      <span class="note">高校生向けセッションも実施予定。別チラシ参照。</span>
+    </div>
+
+    <!-- INFO GRID -->
+    <div
+      class="bg-white padded"
+      style="padding-top: 24px; padding-bottom: 24px"
+    >
+      <div class="section-block">
+        <div class="info-grid">
+          <div class="info-cell">
+            <span class="label">参加費</span>
+            <div class="value free">無　料</div>
+          </div>
+          <div class="info-cell">
+            <span class="label">応募締切</span>
+            <div class="value">2026年6月26日（金）</div>
+          </div>
+          <div class="info-cell">
+            <span class="label">定　員</span>
+            <div class="value">小・中学生 20名</div>
+            <div class="sub">※申込多数の場合は抽選になります</div>
+          </div>
+          <div class="info-cell">
+            <span class="label">会　場</span>
+            <div class="value" style="font-size: 1rem">
+              市民協働プラザ ／ Social Base ANA-BA
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIXEL DIVIDER -->
+    <div class="pixel-divider"></div>
+
+    <!-- SCHEDULE TABLE -->
+    <div id="section-schedule" class="schedule-wrap">
+      <div class="section-block">
+        <div class="sec-heading navy">📅開催日程</div>
+
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>回</th>
+              <th>日程</th>
+              <th>時間</th>
+              <th>会場</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="session-badge">
+                <span class="badge s1">第１回</span>
+              </td>
+              <td class="date">7/5（日）</td>
+              <td class="time">13:00〜16:30</td>
+              <td class="venue">市民協働プラザ</td>
+            </tr>
+            <tr>
+              <td class="session-badge">
+                <span class="badge s2">第２回</span>
+              </td>
+              <td class="date">7/12（日）</td>
+              <td class="time">13:00〜16:30</td>
+              <td class="venue">市民協働プラザ</td>
+            </tr>
+            <tr class="worldlab">
+              <td class="session-badge">
+                <span class="badge wl">ワールドラボ①</span>
+              </td>
+              <td class="date">7/25（土）</td>
+              <td class="time">10:00〜17:00</td>
+              <td class="venue">市民協働プラザ</td>
+            </tr>
+            <tr>
+              <td class="session-badge">
+                <span class="badge s3">第３回</span>
+              </td>
+              <td class="date">7/26（日）</td>
+              <td class="time">13:00〜16:30</td>
+              <td class="venue">市民協働プラザ</td>
+            </tr>
+            <tr class="worldlab">
+              <td class="session-badge">
+                <span class="badge wl">ワールドラボ②</span>
+              </td>
+              <td class="date">8/2（日）</td>
+              <td class="time">10:00〜17:00</td>
+              <td class="venue">市民協働プラザ</td>
+            </tr>
+            <tr class="worldlab">
+              <td class="session-badge">
+                <span class="badge wl">ワールドラボ③</span>
+              </td>
+              <td class="date">8/8（土）</td>
+              <td class="time">10:00〜17:00</td>
+              <td class="venue">Social Base ANA-BA</td>
+            </tr>
+            <tr class="worldlab">
+              <td class="session-badge">
+                <span class="badge wl">ワールドラボ④</span>
+              </td>
+              <td class="date">8/22（土）</td>
+              <td class="time">10:00〜17:00</td>
+              <td class="venue">Social Base ANA-BA</td>
+            </tr>
+            <tr>
+              <td class="session-badge">
+                <span class="badge s4">第４回</span>
+              </td>
+              <td class="date">8/30（日）</td>
+              <td class="time">13:00〜16:30</td>
+              <td class="venue">市民協働プラザ</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="schedule-note">
+          ※
+          ワールドラボは任意参加の自由制作日。事前予約制。PCがない方も利用可能（後述）。<br />
+          ※
+          高校生向けセッションは第2・3回を午前（9:30〜12:00）に別時間帯で実施予定。
+        </div>
+      </div>
+    </div>
+
+    <!-- PIXEL DIVIDER -->
+    <div class="pixel-divider brown"></div>
+
+    <!-- SESSION CARDS -->
+    <div id="section-sessions" class="sessions-wrap">
+      <div class="section-block">
+        <div class="sec-heading navy" style="margin-bottom: 4px">
+          各回 Schedule
+        </div>
+
+        <div class="sessions-grid">
+          <!-- 第1回 -->
+          <div class="session-card">
+            <img src="assets/session1.png" alt="第1回" />
+            <div class="session-card-body">
+              <span class="session-num s1 badge">第１回</span>
+              <div class="session-date">7/5（日）</div>
+              <div class="session-title">未来の街を考えよう</div>
+              <div class="session-desc">
+                「β世代」「人口構造」について専門家から学びます。チーム編成・テーマ決めのイントロダクションを行います。
+              </div>
+            </div>
+          </div>
+
+          <!-- 第2回 -->
+          <div class="session-card">
+            <img src="assets/session2.png" alt="第2回" />
+            <div class="session-card-body">
+              <span class="session-num s2 badge">第２回</span>
+              <div class="session-date">7/12（日）</div>
+              <div class="session-title">街をデザインしてみよう！</div>
+              <div class="session-desc">
+                ワールドの具体的なテーマを決定し、課題を発見します。エリアデザインを考え、フィールドワークの計画を立てます。
+              </div>
+            </div>
+          </div>
+
+          <!-- 第3回 -->
+          <div class="session-card">
+            <img src="assets/session3.png" alt="第3回" />
+            <div class="session-card-body">
+              <span class="session-num s3 badge">第３回</span>
+              <div class="session-date">7/26（日）</div>
+              <div class="session-title">プログラミング・動画制作</div>
+              <div class="session-desc">
+                Minecraftでのプログラミング技術を学び、爆速整地や道路づくりに挑戦。プレゼン動画の作成方法も学習します。
+              </div>
+            </div>
+          </div>
+
+          <!-- 第4回 -->
+          <div class="session-card">
+            <img src="assets/session4.png" alt="第4回" />
+            <div class="session-card-body">
+              <span class="session-num s4 badge">第４回</span>
+              <div class="session-date">8/30（日）</div>
+              <div class="session-title">マイクラカップ<br />会津若松大会</div>
+              <div class="session-desc">
+                東北大会・全国大会を見据え、これまでの成果をプレゼンします。優れたチームには会津若松市から「頑張れ！AIZU賞」が授与されます。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIXEL DIVIDER -->
+    <div class="pixel-divider"></div>
+
+    <!-- WHAT IS MINECRAFT CUP -->
+    <div
+      id="section-whatis"
+      class="bg-white padded"
+      style="padding-top: 24px; padding-bottom: 24px"
+    >
+      <div class="section-block">
+        <div class="sec-heading brown" style="margin-bottom: 16px">
+          🏆マイクラカップとは？
+        </div>
+        <div class="whatis-inner">
+          <div class="whatis-text">
+            <p>
+              マイクラカップは全国の小・中・高校生を対象にしたデジタルモノづくりコンテストです。教育版マインクラフトを使用して、与えられたテーマに沿った作品を制作し、技術や創造性を競います。
+            </p>
+            <p>
+              今年のテーマは「みんなが輝く！β世代の未来のまち〜人口・年齢のバランスが変わる社会をどう生きる？〜」。<strong
+                >応募締切は9月7日。</strong
+              >
+            </p>
+            <a
+              class="mccup-link"
+              href="https://mccup.jp/"
+              target="_blank"
+              rel="noopener"
+            >
+              マイクラカップ公式サイトへ →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIXEL DIVIDER -->
+    <div class="pixel-divider brown"></div>
+
+    <!-- CONDITIONS -->
+    <div id="section-conditions" class="conditions-wrap padded">
+      <div class="section-block">
+        <div class="conditions-header">
+          <span class="important-badge">重要！！</span>
+          <span class="conditions-title">参加条件</span>
+        </div>
+
+        <ul class="conditions-list">
+          <li>
+            教育版マインクラフト（Minecraft
+            Education）を自宅PCにインストールできること
+          </li>
+          <li>インターネットに接続できる環境があること</li>
+          <li>第8回マイクラカップへ応募すること</li>
+          <li>１チーム（３〜５名）で取り組み。既存チームでの参加OK</li>
+          <li>
+            チーム参加の場合は第4回への参加必須。個人参加（事務局でチーム編成）は第1・4回必須
+          </li>
+        </ul>
+
+        <div class="no-pc-box">
+          <div class="title">
+            〜 PCや教育版マイクラライセンスが用意できない場合 〜
+          </div>
+          <p>
+            ワールドラボ（自由制作日）にご参加ください。当日は事務局が貸出用PCを用意します（1回につき最大7台程度）。貸出は先着順のため、できる限りご自身で環境を整えることをおすすめします。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIXEL DIVIDER -->
+    <div class="pixel-divider"></div>
+
+    <!-- CONTACT -->
+    <div
+      id="section-contact"
+      class="contact-block padded"
+      style="padding-top: 20px; padding-bottom: 20px"
+    >
+      <div class="section-block">
+        <div class="org-name">特定非営利活動法人 Solaris（ソラリス）</div>
+        <div>
+          📧
+          <a href="mailto:ry.shimakage@npo-solaris.or.jp"
+            >ry.shimakage@npo-solaris.or.jp</a
+          >
+          　　📞 <a href="tel:08020739204">080-2073-9204</a>（島影）
+        </div>
+        <div class="organizer-line">
+          【主催】デジタル未来アート事業実行委員会（事務局：会津若松市情報戦略課）/
+          NPO法人Solaris 　【共催】会津若松市 　【協力】マイクラカップ運営事務局
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

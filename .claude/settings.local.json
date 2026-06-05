@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem \"C:\\\\myWork\\\\dev\\\\roadtominecraft2026\")",
+      "Bash(Select-Object Name, FullName)",
+      "PowerShell(pip install pypdf pdfplumber -q)"
+    ]
+  }
+}
