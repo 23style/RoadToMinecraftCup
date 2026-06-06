@@ -550,7 +550,7 @@
       /* ===== WHAT IS ===== */
       .whatis-wrap {
         background: #fff;
-        padding: 28px 20px;
+        padding: 28px 20px 20px;
       }
       .whatis-text p {
         font-size: 0.95rem;
@@ -631,6 +631,73 @@
         color: var(--mc-green2);
         font-size: 0.9rem;
       }
+      /* ===== LICENSE BOX ===== */
+      .license-box {
+        background: #eef6ff;
+        border: 2px solid var(--mc-blue);
+        border-radius: 4px;
+        padding: 18px 20px;
+        margin-top: 20px;
+        margin-bottom: 16px;
+      }
+      .license-box .title {
+        font-weight: 900;
+        color: var(--mc-blue);
+        font-size: 1rem;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .license-box .title::before {
+        content: "💻";
+        font-size: 1.1rem;
+      }
+      .license-box p {
+        font-size: 0.92rem;
+        line-height: 1.75;
+        color: #333;
+        margin-bottom: 12px;
+      }
+      .license-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+        margin-top: 4px;
+      }
+      .license-table th {
+        background: var(--mc-dark);
+        color: #fff;
+        padding: 6px 10px;
+        font-weight: 700;
+        text-align: left;
+        white-space: nowrap;
+      }
+      .license-table td {
+        padding: 8px 10px;
+        border-bottom: 1px solid #c8dde8;
+        vertical-align: middle;
+        line-height: 1.55;
+      }
+      .license-table tr:nth-child(odd) td {
+        background: #f4faff;
+      }
+      .license-table tr:nth-child(even) td {
+        background: #fff;
+      }
+      .license-table td:last-child {
+        white-space: nowrap;
+        font-weight: 700;
+        color: var(--mc-dark);
+      }
+      .license-table a {
+        color: var(--mc-blue);
+        text-decoration: underline;
+      }
+      .license-table a:hover {
+        color: var(--mc-dark);
+      }
+
       .no-pc-box {
         background: #fff;
         border: 2px dashed var(--mc-brown);
@@ -837,7 +904,7 @@
 
         /* --- WHAT IS --- */
         .whatis-wrap {
-          padding: 20px 16px;
+          padding: 20px 16px 40px;
         }
         .whatis-text p {
           font-size: 0.9rem;
@@ -853,6 +920,22 @@
         }
         .conditions-list li {
           font-size: 0.9rem;
+        }
+        .license-box {
+          padding: 14px 14px;
+        }
+        .license-box p {
+          font-size: 0.87rem;
+        }
+        .license-table {
+          font-size: 0.8rem;
+        }
+        .license-table th,
+        .license-table td {
+          padding: 6px 8px;
+        }
+        .license-table td:last-child {
+          white-space: normal;
         }
         .no-pc-box {
           padding: 14px 14px;
@@ -1231,7 +1314,7 @@
     <div class="pixel-divider"></div>
 
     <!-- WHAT IS MINECRAFT CUP -->
-    <div id="section-whatis" class="whatis-wrap padded">
+    <div id="section-whatis" class="whatis-wrap">
       <div class="section-block">
         <div class="sec-heading brown" style="margin-bottom: 16px">
           🏆マイクラカップとは？
@@ -1280,6 +1363,46 @@
             チーム参加の場合は第4回への参加必須。個人参加（事務局でチーム編成）は第1・4回必須
           </li>
         </ul>
+
+        <div class="license-box">
+          <div class="title">教育版マイクラのライセンスについて</div>
+          <p>
+            マイクラカップへの応募には<strong>教育版マイクラ</strong>が必要です（Switch版・Java版は不可）。
+          </p>
+          <table class="license-table">
+            <thead>
+              <tr>
+                <th>対象</th>
+                <th>方法</th>
+                <th>費用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>公立小・中学校の<br />児童・生徒</td>
+                <td>
+                  <a
+                    href="https://mccup.jp/supportpackage/"
+                    target="_blank"
+                    rel="noopener"
+                    >マイクラカップ事務局のサポートパック</a
+                  >
+                </td>
+                <td>6,000円／ライセンス</td>
+              </tr>
+              <tr>
+                <td>〃</td>
+                <td>Microsoft Store で購入</td>
+                <td>36米ドル<br />（約5,800円）／年</td>
+              </tr>
+              <tr>
+                <td>ザベリオ学園の<br />児童・生徒</td>
+                <td>学校経由で購入</td>
+                <td>500円程度</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <div class="no-pc-box">
           <div class="title">
