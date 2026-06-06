@@ -36,6 +36,96 @@
         color: #222;
       }
 
+      /* ===== STICKY NAV ===== */
+      .sticky-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--mc-dark);
+        border-bottom: 3px solid var(--mc-gold);
+      }
+      .nav-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        color: var(--mc-gold);
+        font-weight: 900;
+        font-size: 0.85rem;
+        padding: 11px 16px;
+        white-space: nowrap;
+        letter-spacing: 0.04em;
+        display: none; /* PC では非表示 */
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0 10px;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #cce0ff;
+        border-radius: 2px;
+        transition:
+          transform 0.25s,
+          opacity 0.25s;
+      }
+      /* open state */
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+      .sticky-nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0;
+        margin: 0 auto;
+        padding: 0;
+        flex: 1;
+      }
+      .sticky-nav ul li a {
+        display: block;
+        padding: 11px 16px;
+        color: #cce0ff;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        transition:
+          background 0.15s,
+          color 0.15s;
+        white-space: nowrap;
+      }
+      .sticky-nav ul li a:hover {
+        background: var(--mc-gold);
+        color: var(--mc-dark);
+      }
+      .sticky-nav ul li:last-child a {
+        border-right: none;
+      }
+
       /* ===== HERO ===== */
       .hero {
         position: relative;
@@ -48,14 +138,6 @@
         max-width: 900px;
         display: block;
         margin: 0 auto;
-      }
-      .hero-badge {
-        background: var(--mc-dark);
-        color: #cce0ff;
-        font-size: 0.9rem;
-        font-weight: 700;
-        padding: 6px 0;
-        letter-spacing: 0.1em;
       }
 
       /* ===== SUBTITLE BAND ===== */
@@ -70,16 +152,51 @@
         border-bottom: 4px solid var(--mc-gold2);
         letter-spacing: 0.05em;
       }
-      .subtitle-band span {
-        font-size: 1.05rem;
+
+      /* ===== APPLY BUTTON ===== */
+      .apply-area {
+        background: var(--mc-dark);
+        text-align: center;
+        padding: 20px 16px;
+        border-bottom: 4px solid #0d1a40;
+      }
+      .apply-btn {
+        display: inline-block;
+        background: var(--mc-green2);
+        color: #fff;
+        font-size: 1.25rem;
+        font-weight: 900;
+        padding: 16px 52px;
+        border-radius: 4px;
+        text-decoration: none;
+        letter-spacing: 0.06em;
+        box-shadow: 0 5px 0 #1e5200;
+        transition:
+          transform 0.1s,
+          box-shadow 0.1s;
+        border: none;
+        cursor: pointer;
+      }
+      .apply-btn:hover {
+        transform: translateY(2px);
+        box-shadow: 0 3px 0 #1e5200;
+      }
+      .apply-btn:active {
+        transform: translateY(5px);
+        box-shadow: none;
+      }
+      .apply-deadline {
+        margin-top: 14px;
+        color: #cce0ff;
+        font-size: 1rem;
         font-weight: 700;
+        letter-spacing: 0.05em;
       }
 
       /* ===== SECTION WRAPPER ===== */
-      .section {
+      .section-block {
         max-width: 900px;
         margin: 0 auto;
-        padding: 0 16px;
       }
 
       /* ===== INTRO ===== */
@@ -153,7 +270,7 @@
       .sec-heading {
         background: var(--mc-green);
         color: #fff;
-        padding: 2px 2px;
+        padding: 8px 14px;
         font-size: 1.1rem;
         font-weight: 900;
         letter-spacing: 0.08em;
@@ -167,90 +284,6 @@
       .sec-heading.navy {
         background: var(--mc-dark);
         border-left-color: #0d1a40;
-      }
-
-      /* ===== SCHEDULE TABLE ===== */
-      .schedule-wrap {
-        background: var(--mc-teal);
-        padding: 24px 16px 32px;
-      }
-      .schedule-table {
-        width: 100%;
-        border-collapse: collapse;
-        background: #fff;
-        border: 3px solid var(--mc-dark);
-        font-size: 0.95rem;
-      }
-      .schedule-table thead th {
-        background: var(--mc-dark);
-        color: #fff;
-        padding: 2px 12px;
-        font-weight: 700;
-        text-align: center;
-      }
-      .schedule-table tbody tr:nth-child(odd) {
-        background: #eaf5ff;
-      }
-      .schedule-table tbody tr:nth-child(even) {
-        background: #fff;
-      }
-      .schedule-table tbody tr.worldlab {
-        background: #f5f5e8;
-      }
-      .schedule-table td {
-        padding: 10px 14px;
-        border-bottom: 1px solid #c8dde8;
-        vertical-align: middle;
-      }
-      .schedule-table td.session-badge {
-        text-align: center;
-        white-space: nowrap;
-      }
-      .badge {
-        display: inline-block;
-        padding: 4px 10px;
-        border-radius: 3px;
-        font-weight: 900;
-        font-size: 0.82rem;
-        color: #fff;
-        white-space: nowrap;
-      }
-      .badge.s1 {
-        background: #2e7d32;
-      }
-      .badge.s2 {
-        background: #1565c0;
-      }
-      .badge.s3 {
-        background: #6a1b9a;
-      }
-      .badge.s4 {
-        background: #bf360c;
-      }
-      .badge.wl {
-        background: #78909c;
-      }
-      .schedule-table td.date {
-        font-weight: 900;
-        font-size: 1.05rem;
-        white-space: nowrap;
-      }
-      .schedule-table td.time {
-        white-space: nowrap;
-        color: #444;
-      }
-      .schedule-table td.venue {
-        color: #555;
-      }
-      .schedule-note {
-        margin-top: 12px;
-        padding: 10px 14px;
-        background: #fffbe6;
-        border: 1px solid #e0cc70;
-        border-radius: 3px;
-        font-size: 0.85rem;
-        color: #5a4000;
-        line-height: 1.7;
       }
 
       /* ===== INFO GRID ===== */
@@ -297,6 +330,259 @@
         margin-top: 3px;
       }
 
+      /* ===== PIXEL DIVIDER ===== */
+      .pixel-divider {
+        height: 16px;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--mc-green) 0px,
+          var(--mc-green) 16px,
+          var(--mc-green2) 16px,
+          var(--mc-green2) 32px
+        );
+      }
+      .pixel-divider.brown {
+        background: repeating-linear-gradient(
+          90deg,
+          var(--mc-brown) 0px,
+          var(--mc-brown) 16px,
+          #5c3820 16px,
+          #5c3820 32px
+        );
+      }
+
+      /* ===== SCHEDULE ===== */
+      .schedule-wrap {
+        background: var(--mc-teal);
+        padding: 24px 16px 32px;
+      }
+
+      /* PC: テーブル表示 */
+      .schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border: 3px solid var(--mc-dark);
+        font-size: 0.95rem;
+        margin-top: 12px;
+      }
+      .schedule-table thead th {
+        background: var(--mc-dark);
+        color: #fff;
+        padding: 8px 12px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .schedule-table tbody tr:nth-child(odd) {
+        background: #eaf5ff;
+      }
+      .schedule-table tbody tr:nth-child(even) {
+        background: #fff;
+      }
+      .schedule-table tbody tr.worldlab {
+        background: #f5f5e8;
+      }
+      .schedule-table td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #c8dde8;
+        vertical-align: middle;
+      }
+      .schedule-table td.session-badge {
+        text-align: center;
+        white-space: nowrap;
+      }
+      .schedule-table td.date {
+        font-weight: 900;
+        font-size: 1.05rem;
+        white-space: nowrap;
+      }
+      .schedule-table td.time {
+        white-space: nowrap;
+        color: #444;
+      }
+      .schedule-table td.venue {
+        color: #555;
+      }
+
+      /* スマホ: カード表示 */
+      .schedule-cards {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .schedule-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #fff;
+        border: 2px solid var(--mc-dark);
+        border-radius: 6px;
+        padding: 12px 16px;
+      }
+      .schedule-card.worldlab-card {
+        background: #f5f5e8;
+        border-color: #78909c;
+      }
+      .schedule-card .sc-badge {
+        flex-shrink: 0;
+      }
+      .schedule-card .sc-info {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px 14px;
+        flex: 1;
+      }
+      .schedule-card .sc-date {
+        font-weight: 900;
+        font-size: 1rem;
+        color: var(--mc-dark);
+        white-space: nowrap;
+      }
+      .schedule-card .sc-time {
+        font-size: 0.88rem;
+        color: #444;
+        white-space: nowrap;
+      }
+      .schedule-card .sc-venue {
+        font-size: 0.85rem;
+        color: #555;
+        white-space: nowrap;
+      }
+
+      .schedule-note {
+        margin-top: 12px;
+        padding: 10px 14px;
+        background: #fffbe6;
+        border: 1px solid #e0cc70;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        color: #5a4000;
+        line-height: 1.7;
+      }
+
+      /* ===== BADGE ===== */
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 3px;
+        font-weight: 900;
+        font-size: 0.82rem;
+        color: #fff;
+        white-space: nowrap;
+      }
+      .badge.s1 {
+        background: #2e7d32;
+      }
+      .badge.s2 {
+        background: #1565c0;
+      }
+      .badge.s3 {
+        background: #6a1b9a;
+      }
+      .badge.s4 {
+        background: #bf360c;
+      }
+      .badge.wl {
+        background: #78909c;
+      }
+
+      /* ===== SESSION CARDS ===== */
+      .sessions-wrap {
+        background: var(--mc-teal);
+        padding: 24px 16px 32px;
+      }
+      /* PC: 4カラムグリッド */
+      .sessions-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 16px;
+      }
+      .session-card {
+        background: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        border: 3px solid var(--mc-dark);
+        display: flex;
+        flex-direction: column;
+      }
+      .session-card img {
+        display: block;
+        width: 80%;
+        height: auto;
+        margin: 12px auto 0;
+      }
+      .session-card-body {
+        padding: 8px 10px 10px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .session-num {
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 3px;
+        font-weight: 900;
+        font-size: 0.82rem;
+        color: #fff;
+        align-self: flex-start;
+      }
+      .session-date {
+        font-size: 1rem;
+        font-weight: 900;
+        color: var(--mc-dark);
+      }
+      .session-title {
+        font-size: 0.95rem;
+        font-weight: 900;
+        color: #222;
+        line-height: 1.4;
+      }
+      .session-desc {
+        font-size: 0.82rem;
+        color: #555;
+        line-height: 1.65;
+      }
+
+      /* ===== WHAT IS ===== */
+      .whatis-wrap {
+        background: #fff;
+        padding: 28px 20px;
+      }
+      .whatis-text p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .whatis-text p:last-child {
+        margin-bottom: 0;
+      }
+      .mccup-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 16px;
+        padding: 10px 20px;
+        background: #fff;
+        border: 2px solid var(--mc-green2);
+        border-radius: 4px;
+        text-decoration: none;
+        color: var(--mc-green2);
+        font-weight: 700;
+        font-size: 0.9rem;
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+      .mccup-link:hover {
+        background: var(--mc-green2);
+        color: #fff;
+      }
+
       /* ===== CONDITIONS ===== */
       .conditions-wrap {
         background: #fff9ee;
@@ -317,6 +603,7 @@
         padding: 5px 6px;
         border-radius: 3px;
         letter-spacing: 0.05em;
+        white-space: nowrap;
       }
       .conditions-title {
         font-size: 1.25rem;
@@ -365,144 +652,6 @@
         color: #444;
       }
 
-      /* ===== SESSION CARDS ===== */
-      .sessions-wrap {
-        background: var(--mc-teal);
-        padding: 24px 16px 32px;
-      }
-      .sessions-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 14px;
-        margin-top: 20px;
-      }
-      .session-card {
-        background: #fff;
-        border-radius: 4px;
-        overflow: hidden;
-        border: 3px solid var(--mc-dark);
-        display: flex;
-        flex-direction: column;
-      }
-      .session-card img {
-        display: block;
-        width: 80%;
-        height: auto;
-        margin: 12px auto 0;
-      }
-      .session-card-body {
-        padding: 6px 6px 8px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .session-num {
-        display: inline-block;
-        padding: 3px 10px;
-        border-radius: 3px;
-        font-weight: 900;
-        font-size: 0.82rem;
-        color: #fff;
-        align-self: flex-start;
-      }
-      .session-date {
-        font-size: 1rem;
-        font-weight: 900;
-        color: var(--mc-dark);
-      }
-      .session-title {
-        font-size: 0.95rem;
-        font-weight: 900;
-        color: #222;
-        line-height: 1.4;
-      }
-      .session-desc {
-        font-size: 0.82rem;
-        color: #555;
-        line-height: 1.65;
-      }
-
-      /* ===== WHAT IS ===== */
-      .whatis-wrap {
-        background: #fff;
-        padding: 28px 20px;
-      }
-      .whatis-inner {
-        display: block;
-      }
-      .whatis-text {
-        flex: 1;
-      }
-      .whatis-text p {
-        font-size: 0.95rem;
-        line-height: 1.85;
-        color: #333;
-        margin-bottom: 10px;
-      }
-      .whatis-text p:last-child {
-        margin-bottom: 0;
-      }
-      .mccup-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 16px;
-        padding: 10px 20px;
-        background: #fff;
-        border: 2px solid var(--mc-green2);
-        border-radius: 4px;
-        text-decoration: none;
-        color: var(--mc-green2);
-        font-weight: 700;
-        font-size: 0.9rem;
-        transition:
-          background 0.15s,
-          color 0.15s;
-      }
-      .mccup-link:hover {
-        background: var(--mc-green2);
-        color: #fff;
-      }
-      .mccup-link:hover img {
-        filter: brightness(0) invert(1);
-      }
-      .mccup-link img {
-        height: 20px;
-        width: auto;
-      }
-
-      /* ===== CTA ===== */
-      .cta-block {
-        background: var(--mc-dark);
-        color: #fff;
-        text-align: center;
-        padding: 30px 20px 36px;
-      }
-      .cta-block .cta-title {
-        font-size: 1.8rem;
-        font-weight: 900;
-        color: var(--mc-gold);
-        margin-bottom: 8px;
-        line-height: 1.3;
-      }
-      .cta-block .cta-sub {
-        font-size: 1rem;
-        color: #aac8ff;
-        margin-bottom: 20px;
-      }
-      .cta-deadline {
-        display: inline-block;
-        background: var(--mc-red);
-        color: #fff;
-        font-size: 1.3rem;
-        font-weight: 900;
-        padding: 12px 36px;
-        border-radius: 4px;
-        letter-spacing: 0.05em;
-        box-shadow: 0 4px 0 #7a0e0e;
-      }
-
       /* ===== CONTACT ===== */
       .contact-block {
         background: #1a2a3a;
@@ -529,114 +678,7 @@
         margin-top: 6px;
       }
 
-      /* ===== STICKY NAV ===== */
-      .sticky-nav {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: var(--mc-dark);
-        border-bottom: 3px solid var(--mc-gold);
-      }
-      .sticky-nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0;
-      }
-      .sticky-nav ul li a {
-        display: block;
-        padding: 11px 16px;
-        color: #cce0ff;
-        text-decoration: none;
-        font-size: 0.85rem;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
-        transition:
-          background 0.15s,
-          color 0.15s;
-        white-space: nowrap;
-      }
-      .sticky-nav ul li a:hover {
-        background: var(--mc-gold);
-        color: var(--mc-dark);
-      }
-      .sticky-nav ul li:last-child a {
-        border-right: none;
-      }
-
-      /* ===== APPLY BUTTON ===== */
-      .apply-area {
-        background: var(--mc-dark);
-        text-align: center;
-        padding: 20px 16px;
-        border-bottom: 4px solid #0d1a40;
-      }
-      .apply-btn {
-        display: inline-block;
-        background: var(--mc-green2);
-        color: #fff;
-        font-size: 1.25rem;
-        font-weight: 900;
-        padding: 16px 52px;
-        border-radius: 4px;
-        text-decoration: none;
-        letter-spacing: 0.06em;
-        box-shadow: 0 5px 0 #1e5200;
-        transition:
-          transform 0.1s,
-          box-shadow 0.1s;
-        border: none;
-        cursor: pointer;
-      }
-      .apply-btn:hover {
-        transform: translateY(2px);
-        box-shadow: 0 3px 0 #1e5200;
-      }
-      .apply-btn:active {
-        transform: translateY(5px);
-        box-shadow: none;
-      }
-      .apply-deadline {
-        margin-top: 14px;
-        color: #cce0ff;
-        font-size: 1rem;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-      }
-
-      /* ===== PIXEL DIVIDER ===== */
-      .pixel-divider {
-        height: 16px;
-        background: repeating-linear-gradient(
-          90deg,
-          var(--mc-green) 0px,
-          var(--mc-green) 16px,
-          var(--mc-green2) 16px,
-          var(--mc-green2) 32px
-        );
-      }
-      .pixel-divider.brown {
-        background: repeating-linear-gradient(
-          90deg,
-          var(--mc-brown) 0px,
-          var(--mc-brown) 16px,
-          #5c3820 16px,
-          #5c3820 32px
-        );
-      }
-
-      /* ===== WRAP SECTIONS ===== */
-      .bg-teal {
-        background: var(--mc-teal);
-      }
-      .bg-light {
-        background: var(--mc-light);
-      }
+      /* ===== BG HELPERS ===== */
       .bg-white {
         background: #fff;
       }
@@ -644,24 +686,231 @@
         padding: 0 16px;
       }
 
-      .section-block {
-        max-width: 900px;
-        margin: 0 auto;
+      /* ===================================================
+         RESPONSIVE — スマホ（600px以下）
+      =================================================== */
+      @media (max-width: 600px) {
+        /* --- NAV: ハンバーガーメニュー --- */
+        .nav-logo {
+          display: block;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .sticky-nav ul {
+          display: none;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--mc-dark);
+          border-top: 2px solid rgba(255, 255, 255, 0.1);
+          border-bottom: 3px solid var(--mc-gold);
+          z-index: 200;
+          padding: 4px 0;
+        }
+        .sticky-nav ul.open {
+          display: flex;
+        }
+        .sticky-nav ul li a {
+          padding: 13px 20px;
+          font-size: 0.9rem;
+          border-right: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .sticky-nav ul li:last-child a {
+          border-bottom: none;
+        }
+        .sticky-nav ul li a:hover {
+          background: var(--mc-gold);
+          color: var(--mc-dark);
+        }
+
+        /* --- SUBTITLE BAND --- */
+        .subtitle-band {
+          font-size: 1rem;
+          padding: 12px 16px;
+        }
+
+        /* --- APPLY BUTTON --- */
+        .apply-area {
+          padding: 16px 16px;
+        }
+        .apply-btn {
+          display: block;
+          width: 100%;
+          font-size: 1.1rem;
+          padding: 16px 20px;
+          text-align: center;
+        }
+        .apply-deadline {
+          font-size: 0.9rem;
+          margin-top: 10px;
+        }
+
+        /* --- INTRO --- */
+        .intro-block {
+          padding: 18px 16px;
+          margin: 16px 12px;
+        }
+        .intro-block p {
+          font-size: 0.92rem;
+        }
+
+        /* --- TARGET BAND --- */
+        .target-band .label {
+          display: block;
+          margin: 0 auto 8px;
+          width: fit-content;
+        }
+        .target-band .value {
+          font-size: 1.2rem;
+          display: block;
+        }
+
+        /* --- INFO GRID --- */
+        .info-cell .value {
+          font-size: 1.05rem;
+        }
+        .info-cell .value.free {
+          font-size: 1.3rem;
+        }
+        .info-cell {
+          padding: 14px 12px;
+        }
+
+        /* --- SCHEDULE: テーブル非表示→カード表示 --- */
+        .schedule-table {
+          display: none;
+        }
+        .schedule-cards {
+          display: flex;
+        }
+        .schedule-wrap {
+          padding: 20px 12px 28px;
+        }
+        .schedule-card {
+          padding: 10px 14px;
+          gap: 10px;
+        }
+        .schedule-card .sc-info {
+          gap: 4px 10px;
+        }
+        .schedule-card .sc-date {
+          font-size: 0.95rem;
+        }
+
+        /* --- SESSION CARDS: 縦積み横長 --- */
+        .sessions-wrap {
+          padding: 20px 12px 28px;
+        }
+        .sessions-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .session-card {
+          flex-direction: row;
+          align-items: stretch;
+        }
+        .session-card img {
+          width: 100px;
+          height: auto;
+          object-fit: cover;
+          margin: auto 0;
+          flex-shrink: 0;
+          border-radius: 0;
+          align-self: center;
+        }
+        .session-card-body {
+          padding: 10px 12px;
+          gap: 4px;
+        }
+        .session-title {
+          font-size: 0.9rem;
+        }
+        .session-desc {
+          font-size: 0.78rem;
+          line-height: 1.55;
+        }
+
+        /* --- WHAT IS --- */
+        .whatis-wrap {
+          padding: 20px 16px;
+        }
+        .whatis-text p {
+          font-size: 0.9rem;
+        }
+        .mccup-link {
+          display: block;
+          text-align: center;
+        }
+
+        /* --- CONDITIONS --- */
+        .conditions-wrap {
+          padding: 20px 14px;
+        }
+        .conditions-list li {
+          font-size: 0.9rem;
+        }
+        .no-pc-box {
+          padding: 14px 14px;
+        }
+        .no-pc-box p {
+          font-size: 0.87rem;
+        }
+
+        /* --- CONTACT --- */
+        .contact-block {
+          padding: 18px 14px;
+          font-size: 0.82rem;
+          line-height: 1.9;
+        }
+        .organizer-line {
+          font-size: 0.74rem;
+          word-break: break-all;
+          line-height: 1.8;
+        }
+      }
+
+      /* タブレット（601px〜900px）: セッションカード2カラム */
+      @media (min-width: 601px) and (max-width: 900px) {
+        .sessions-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .apply-btn {
+          padding: 16px 36px;
+        }
       }
     </style>
   </head>
   <body>
     <!-- STICKY NAV -->
     <nav class="sticky-nav">
-      <ul>
-        <li><a href="#section-about">イベント概要</a></li>
-        <li><a href="#section-schedule">開催日程</a></li>
-        <li><a href="#section-sessions">各回内容</a></li>
-        <li><a href="#section-whatis">マイクラカップとは</a></li>
-        <li><a href="#section-conditions">参加条件</a></li>
-        <li><a href="#section-apply">応募する</a></li>
-        <li><a href="#section-contact">お問い合わせ</a></li>
-      </ul>
+      <div class="nav-inner">
+        <span class="nav-logo">🎮 マイクラカップ AIZU</span>
+        <ul id="nav-menu">
+          <li><a href="#section-about">イベント概要</a></li>
+          <li><a href="#section-schedule">開催日程</a></li>
+          <li><a href="#section-sessions">各回内容</a></li>
+          <li><a href="#section-whatis">マイクラカップとは</a></li>
+          <li><a href="#section-conditions">参加条件</a></li>
+          <li><a href="#section-apply">応募する</a></li>
+          <li><a href="#section-contact">お問い合わせ</a></li>
+        </ul>
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
 
     <!-- HERO -->
@@ -688,11 +937,7 @@
     </div>
 
     <!-- INTRO -->
-    <div
-      id="section-about"
-      class="bg-white padded"
-      style="background: var(--mc-dark)"
-    >
+    <div id="section-about" style="background: var(--mc-dark)">
       <div class="intro-block section-block">
         <p>
           デジタル未来アート事業実行委員会はNPO法人Solarisと連携し、<strong>会津若松市の小中学生のマイクラカップへのエントリー</strong>をサポートします。
@@ -748,11 +993,12 @@
     <!-- PIXEL DIVIDER -->
     <div class="pixel-divider"></div>
 
-    <!-- SCHEDULE TABLE -->
+    <!-- SCHEDULE -->
     <div id="section-schedule" class="schedule-wrap">
       <div class="section-block">
         <div class="sec-heading navy">📅開催日程</div>
 
+        <!-- PC用テーブル -->
         <table class="schedule-table">
           <thead>
             <tr>
@@ -829,6 +1075,82 @@
             </tr>
           </tbody>
         </table>
+
+        <!-- スマホ用横長カード -->
+        <div class="schedule-cards">
+          <div class="schedule-card">
+            <div class="sc-badge"><span class="badge s1">第１回</span></div>
+            <div class="sc-info">
+              <span class="sc-date">7/5（日）</span>
+              <span class="sc-time">13:00〜16:30</span>
+              <span class="sc-venue">市民協働プラザ</span>
+            </div>
+          </div>
+          <div class="schedule-card">
+            <div class="sc-badge"><span class="badge s2">第２回</span></div>
+            <div class="sc-info">
+              <span class="sc-date">7/12（日）</span>
+              <span class="sc-time">13:00〜16:30</span>
+              <span class="sc-venue">市民協働プラザ</span>
+            </div>
+          </div>
+          <div class="schedule-card worldlab-card">
+            <div class="sc-badge">
+              <span class="badge wl">ワールドラボ①</span>
+            </div>
+            <div class="sc-info">
+              <span class="sc-date">7/25（土）</span>
+              <span class="sc-time">10:00〜17:00</span>
+              <span class="sc-venue">市民協働プラザ</span>
+            </div>
+          </div>
+          <div class="schedule-card">
+            <div class="sc-badge"><span class="badge s3">第３回</span></div>
+            <div class="sc-info">
+              <span class="sc-date">7/26（日）</span>
+              <span class="sc-time">13:00〜16:30</span>
+              <span class="sc-venue">市民協働プラザ</span>
+            </div>
+          </div>
+          <div class="schedule-card worldlab-card">
+            <div class="sc-badge">
+              <span class="badge wl">ワールドラボ②</span>
+            </div>
+            <div class="sc-info">
+              <span class="sc-date">8/2（日）</span>
+              <span class="sc-time">10:00〜17:00</span>
+              <span class="sc-venue">市民協働プラザ</span>
+            </div>
+          </div>
+          <div class="schedule-card worldlab-card">
+            <div class="sc-badge">
+              <span class="badge wl">ワールドラボ③</span>
+            </div>
+            <div class="sc-info">
+              <span class="sc-date">8/8（土）</span>
+              <span class="sc-time">10:00〜17:00</span>
+              <span class="sc-venue">Social Base ANA-BA</span>
+            </div>
+          </div>
+          <div class="schedule-card worldlab-card">
+            <div class="sc-badge">
+              <span class="badge wl">ワールドラボ④</span>
+            </div>
+            <div class="sc-info">
+              <span class="sc-date">8/22（土）</span>
+              <span class="sc-time">10:00〜17:00</span>
+              <span class="sc-venue">Social Base ANA-BA</span>
+            </div>
+          </div>
+          <div class="schedule-card">
+            <div class="sc-badge"><span class="badge s4">第４回</span></div>
+            <div class="sc-info">
+              <span class="sc-date">8/30（日）</span>
+              <span class="sc-time">13:00〜16:30</span>
+              <span class="sc-venue">市民協働プラザ</span>
+            </div>
+          </div>
+        </div>
 
         <div class="schedule-note">
           ※
@@ -909,34 +1231,28 @@
     <div class="pixel-divider"></div>
 
     <!-- WHAT IS MINECRAFT CUP -->
-    <div
-      id="section-whatis"
-      class="bg-white padded"
-      style="padding-top: 24px; padding-bottom: 24px"
-    >
+    <div id="section-whatis" class="whatis-wrap padded">
       <div class="section-block">
         <div class="sec-heading brown" style="margin-bottom: 16px">
           🏆マイクラカップとは？
         </div>
-        <div class="whatis-inner">
-          <div class="whatis-text">
-            <p>
-              マイクラカップは全国の小・中・高校生を対象にしたデジタルモノづくりコンテストです。教育版マインクラフトを使用して、与えられたテーマに沿った作品を制作し、技術や創造性を競います。
-            </p>
-            <p>
-              今年のテーマは「みんなが輝く！β世代の未来のまち〜人口・年齢のバランスが変わる社会をどう生きる？〜」。<strong
-                >応募締切は9月7日。</strong
-              >
-            </p>
-            <a
-              class="mccup-link"
-              href="https://mccup.jp/"
-              target="_blank"
-              rel="noopener"
+        <div class="whatis-text">
+          <p>
+            マイクラカップは全国の小・中・高校生を対象にしたデジタルモノづくりコンテストです。教育版マインクラフトを使用して、与えられたテーマに沿った作品を制作し、技術や創造性を競います。
+          </p>
+          <p>
+            今年のテーマは「みんなが輝く！β世代の未来のまち〜人口・年齢のバランスが変わる社会をどう生きる？〜」。<strong
+              >応募締切は9月7日。</strong
             >
-              マイクラカップ公式サイトへ →
-            </a>
-          </div>
+          </p>
+          <a
+            class="mccup-link"
+            href="https://mccup.jp/"
+            target="_blank"
+            rel="noopener"
+          >
+            マイクラカップ公式サイトへ →
+          </a>
         </div>
       </div>
     </div>
@@ -992,11 +1308,29 @@
         </a>
         <div></div>
         <div class="organizer-line">
-          【主催】デジタル未来アート事業実行委員会（事務局：会津若松市情報戦略課）/
-          NPO法人Solaris <br />【共催】会津若松市
-          　【協力】マイクラカップ運営事務局
+          【主催】デジタル未来アート事業実行委員会（事務局：会津若松市情報戦略課）／NPO法人Solaris<br />
+          【共催】会津若松市　【協力】マイクラカップ運営事務局
         </div>
       </div>
     </div>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        const isOpen = navMenu.classList.toggle("open");
+        hamburger.classList.toggle("open", isOpen);
+        hamburger.setAttribute("aria-expanded", isOpen);
+      });
+
+      // メニュー項目をタップしたら閉じる
+      navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("open");
+          hamburger.classList.remove("open");
+          hamburger.setAttribute("aria-expanded", "false");
+        });
+      });
+    </script>
   </body>
 </html>
