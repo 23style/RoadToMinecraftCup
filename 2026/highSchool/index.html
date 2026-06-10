@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ROAD TO マイクラカップ IN AIZU 2026</title>
+    <title>ROAD TO マイクラカップ IN AIZU 2026（高校生）</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap");
 
       :root {
-        --mc-dark: #1a2a5e;
-        --mc-blue: #2550a7;
-        --mc-green: #5db12a;
-        --mc-green2: #3d8a1e;
-        --mc-brown: #7a4f2e;
+        --mc-dark: #2d1057;
+        --mc-blue: #7b2fbe;
+        --mc-green: #e85d04;
+        --mc-green2: #c94a00;
+        --mc-brown: #6b3fa0;
         --mc-gold: #ffcc00;
         --mc-gold2: #e6a800;
-        --mc-teal: #c8eaf0;
-        --mc-light: #f0f8e8;
+        --mc-teal: #f0e8ff;
+        --mc-light: #fff5f0;
         --mc-orange: #ff8c00;
         --mc-red: #c0392b;
       }
@@ -58,7 +58,7 @@
         padding: 11px 16px;
         white-space: nowrap;
         letter-spacing: 0.04em;
-        display: none; /* PC では非表示 */
+        display: none;
       }
       .hamburger {
         display: none;
@@ -78,13 +78,12 @@
         display: block;
         width: 22px;
         height: 2px;
-        background: #cce0ff;
+        background: #e8ccff;
         border-radius: 2px;
         transition:
           transform 0.25s,
           opacity 0.25s;
       }
-      /* open state */
       .hamburger.open span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
       }
@@ -107,7 +106,7 @@
       .sticky-nav ul li a {
         display: block;
         padding: 11px 16px;
-        color: #cce0ff;
+        color: #e8ccff;
         text-decoration: none;
         font-size: 0.85rem;
         font-weight: 700;
@@ -158,7 +157,7 @@
         background: var(--mc-dark);
         text-align: center;
         padding: 20px 16px;
-        border-bottom: 4px solid #0d1a40;
+        border-bottom: 4px solid #1a0030;
       }
       .apply-btn {
         display: inline-block;
@@ -170,7 +169,7 @@
         border-radius: 4px;
         text-decoration: none;
         letter-spacing: 0.06em;
-        box-shadow: 0 5px 0 #1e5200;
+        box-shadow: 0 5px 0 #7a2a00;
         transition:
           transform 0.1s,
           box-shadow 0.1s;
@@ -179,7 +178,7 @@
       }
       .apply-btn:hover {
         transform: translateY(2px);
-        box-shadow: 0 3px 0 #1e5200;
+        box-shadow: 0 3px 0 #7a2a00;
       }
       .apply-btn:active {
         transform: translateY(5px);
@@ -187,7 +186,7 @@
       }
       .apply-deadline {
         margin-top: 14px;
-        color: #cce0ff;
+        color: #e8ccff;
         font-size: 1rem;
         font-weight: 700;
         letter-spacing: 0.05em;
@@ -213,7 +212,7 @@
         content: "";
         position: absolute;
         inset: 3px;
-        border: 2px dashed #c8a86e;
+        border: 2px dashed #c8a8e8;
         border-radius: 2px;
         pointer-events: none;
       }
@@ -262,7 +261,7 @@
       .target-band .note {
         display: block;
         font-size: 0.82rem;
-        color: #aac8ff;
+        color: #d8aaff;
         margin-top: 4px;
       }
 
@@ -279,11 +278,11 @@
       }
       .sec-heading.brown {
         background: var(--mc-brown);
-        border-left-color: #4a2e16;
+        border-left-color: #3d1a6e;
       }
       .sec-heading.navy {
         background: var(--mc-dark);
-        border-left-color: #0d1a40;
+        border-left-color: #1a0030;
       }
 
       /* ===== INFO GRID ===== */
@@ -296,8 +295,8 @@
       .info-cell {
         background: #fff;
         padding: 18px 20px;
-        border-right: 2px solid #c8dde8;
-        border-bottom: 2px solid #c8dde8;
+        border-right: 2px solid #d8c8e8;
+        border-bottom: 2px solid #d8c8e8;
       }
       .info-cell:nth-child(even) {
         border-right: none;
@@ -346,8 +345,8 @@
           90deg,
           var(--mc-brown) 0px,
           var(--mc-brown) 16px,
-          #5c3820 16px,
-          #5c3820 32px
+          #3d1a6e 16px,
+          #3d1a6e 32px
         );
       }
 
@@ -357,7 +356,6 @@
         padding: 24px 16px 32px;
       }
 
-      /* PC: テーブル表示 */
       .schedule-table {
         width: 100%;
         border-collapse: collapse;
@@ -374,7 +372,7 @@
         text-align: center;
       }
       .schedule-table tbody tr:nth-child(odd) {
-        background: #eaf5ff;
+        background: #f5eeff;
       }
       .schedule-table tbody tr:nth-child(even) {
         background: #fff;
@@ -384,7 +382,7 @@
       }
       .schedule-table td {
         padding: 10px 14px;
-        border-bottom: 1px solid #c8dde8;
+        border-bottom: 1px solid #d8c8e8;
         vertical-align: middle;
       }
       .schedule-table td.session-badge {
@@ -404,7 +402,6 @@
         color: #555;
       }
 
-      /* スマホ: カード表示 */
       .schedule-cards {
         display: none;
         flex-direction: column;
@@ -473,16 +470,16 @@
         white-space: nowrap;
       }
       .badge.s1 {
-        background: #2e7d32;
-      }
-      .badge.s2 {
-        background: #1565c0;
-      }
-      .badge.s3 {
         background: #6a1b9a;
       }
+      .badge.s2 {
+        background: #c94a00;
+      }
+      .badge.s3 {
+        background: #ad1457;
+      }
       .badge.s4 {
-        background: #bf360c;
+        background: #4527a0;
       }
       .badge.wl {
         background: #78909c;
@@ -493,7 +490,6 @@
         background: var(--mc-teal);
         padding: 24px 16px 32px;
       }
-      /* PC: 4カラムグリッド */
       .sessions-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -633,7 +629,7 @@
       }
       /* ===== LICENSE BOX ===== */
       .license-box {
-        background: #eef6ff;
+        background: #f5eeff;
         border: 2px solid var(--mc-blue);
         border-radius: 4px;
         padding: 18px 20px;
@@ -675,12 +671,12 @@
       }
       .license-table td {
         padding: 8px 10px;
-        border-bottom: 1px solid #c8dde8;
+        border-bottom: 1px solid #d8c8e8;
         vertical-align: middle;
         line-height: 1.55;
       }
       .license-table tr:nth-child(odd) td {
-        background: #f4faff;
+        background: #faf5ff;
       }
       .license-table tr:nth-child(even) td {
         background: #fff;
@@ -721,8 +717,8 @@
 
       /* ===== CONTACT ===== */
       .contact-block {
-        background: #1a2a3a;
-        color: #ccd8e8;
+        background: #1a0030;
+        color: #d8c8e8;
         padding: 20px;
         font-size: 0.88rem;
         line-height: 2;
@@ -733,7 +729,7 @@
         color: var(--mc-gold);
       }
       .contact-block a {
-        color: #7fc6ff;
+        color: #c89fff;
         text-decoration: none;
       }
       .contact-block a:hover {
@@ -741,7 +737,7 @@
       }
       .organizer-line {
         font-size: 0.78rem;
-        color: #8899aa;
+        color: #9977bb;
         margin-top: 6px;
       }
 
@@ -757,7 +753,6 @@
          RESPONSIVE — スマホ（600px以下）
       =================================================== */
       @media (max-width: 600px) {
-        /* --- NAV: ハンバーガーメニュー --- */
         .nav-logo {
           display: block;
         }
@@ -795,13 +790,11 @@
           color: var(--mc-dark);
         }
 
-        /* --- SUBTITLE BAND --- */
         .subtitle-band {
           font-size: 1rem;
           padding: 12px 16px;
         }
 
-        /* --- APPLY BUTTON --- */
         .apply-area {
           padding: 16px 16px;
         }
@@ -817,7 +810,6 @@
           margin-top: 10px;
         }
 
-        /* --- INTRO --- */
         .intro-block {
           padding: 18px 16px;
           margin: 16px 12px;
@@ -826,7 +818,6 @@
           font-size: 0.92rem;
         }
 
-        /* --- TARGET BAND --- */
         .target-band .label {
           display: block;
           margin: 0 auto 8px;
@@ -837,7 +828,6 @@
           display: block;
         }
 
-        /* --- INFO GRID --- */
         .info-cell .value {
           font-size: 1.05rem;
         }
@@ -848,7 +838,6 @@
           padding: 14px 12px;
         }
 
-        /* --- SCHEDULE: テーブル非表示→カード表示 --- */
         .schedule-table {
           display: none;
         }
@@ -869,7 +858,6 @@
           font-size: 0.95rem;
         }
 
-        /* --- SESSION CARDS: 縦積み横長 --- */
         .sessions-wrap {
           padding: 20px 12px 28px;
         }
@@ -902,7 +890,6 @@
           line-height: 1.55;
         }
 
-        /* --- WHAT IS --- */
         .whatis-wrap {
           padding: 20px 16px 40px;
         }
@@ -914,7 +901,6 @@
           text-align: center;
         }
 
-        /* --- CONDITIONS --- */
         .conditions-wrap {
           padding: 20px 14px;
         }
@@ -944,7 +930,6 @@
           font-size: 0.87rem;
         }
 
-        /* --- CONTACT --- */
         .contact-block {
           padding: 18px 14px;
           font-size: 0.82rem;
@@ -957,7 +942,6 @@
         }
       }
 
-      /* タブレット（601px〜900px）: セッションカード2カラム */
       @media (min-width: 601px) and (max-width: 900px) {
         .sessions-grid {
           grid-template-columns: repeat(2, 1fr);
@@ -972,7 +956,7 @@
     <!-- STICKY NAV -->
     <nav class="sticky-nav">
       <div class="nav-inner">
-        <span class="nav-logo">🎮 マイクラカップ AIZU</span>
+        <span class="nav-logo">🎮 マイクラカップ AIZU 高校</span>
         <ul id="nav-menu">
           <li><a href="#section-about">イベント概要</a></li>
           <li><a href="#section-schedule">開催日程</a></li>
@@ -1001,7 +985,7 @@
       <img
         class="hero-img"
         src="assets/hero.png"
-        alt="ROAD TO マイクラカップ IN AIZU 2026"
+        alt="ROAD TO マイクラカップ IN AIZU 2026（高校生）"
       />
     </div>
 
@@ -1012,7 +996,7 @@
     <div id="section-apply" class="apply-area">
       <a
         class="apply-btn"
-        href="https://coderdojo-aizu.doorkeeper.jp/events/197520"
+        href="https://forms.gle/s7swxTk4udMnGc758"
         target="_blank"
         >今すぐ申し込む</a
       >
@@ -1023,7 +1007,7 @@
     <div id="section-about" style="background: var(--mc-dark)">
       <div class="intro-block section-block">
         <p>
-          デジタル未来アート事業実行委員会はNPO法人Solarisと連携し、<strong>会津若松市の小中学生のマイクラカップへのエントリー</strong>をサポートします。
+          デジタル未来アート事業実行委員会はNPO法人Solarisと連携し、<strong>会津若松市の高校生のマイクラカップへのエントリー</strong>をサポートします。
         </p>
         <p class="theme">
           今年のテーマ：「みんなが輝く！β世代の未来のまち〜人口・年齢のバランスが変わる社会をどう生きる？〜」
@@ -1039,8 +1023,8 @@
     <!-- TARGET -->
     <div class="target-band">
       <span class="label">対　象</span>
-      <span class="value">会津若松市内の小・中学生</span>
-      <span class="note">高校生向けセッションも実施予定。別チラシ参照。</span>
+      <span class="value">会津若松市内の高校生</span>
+      <span class="note">小・中学生向けセッションも実施。別チラシ参照。</span>
     </div>
 
     <!-- INFO GRID -->
@@ -1060,7 +1044,7 @@
           </div>
           <div class="info-cell">
             <span class="label">定　員</span>
-            <div class="value">小・中学生 20名</div>
+            <div class="value">高校生 15名</div>
             <div class="sub">※申込多数の場合は抽選になります</div>
           </div>
           <div class="info-cell">
@@ -1105,7 +1089,7 @@
                 <span class="badge s2">第２回</span>
               </td>
               <td class="date">7/12（日）</td>
-              <td class="time">13:00〜16:30</td>
+              <td class="time">9:30〜12:00</td>
               <td class="venue">市民協働プラザ</td>
             </tr>
             <tr class="worldlab">
@@ -1121,7 +1105,7 @@
                 <span class="badge s3">第３回</span>
               </td>
               <td class="date">7/26（日）</td>
-              <td class="time">13:00〜16:30</td>
+              <td class="time">9:30〜12:00</td>
               <td class="venue">市民協働プラザ</td>
             </tr>
             <tr class="worldlab">
@@ -1173,7 +1157,7 @@
             <div class="sc-badge"><span class="badge s2">第２回</span></div>
             <div class="sc-info">
               <span class="sc-date">7/12（日）</span>
-              <span class="sc-time">13:00〜16:30</span>
+              <span class="sc-time">9:30〜12:00</span>
               <span class="sc-venue">市民協働プラザ</span>
             </div>
           </div>
@@ -1191,7 +1175,7 @@
             <div class="sc-badge"><span class="badge s3">第３回</span></div>
             <div class="sc-info">
               <span class="sc-date">7/26（日）</span>
-              <span class="sc-time">13:00〜16:30</span>
+              <span class="sc-time">9:30〜12:00</span>
               <span class="sc-venue">市民協働プラザ</span>
             </div>
           </div>
@@ -1239,7 +1223,7 @@
           ※
           ワールドラボは任意参加の自由制作日。事前予約制。PCがない方も利用可能（後述）。<br />
           ※
-          高校生向けセッションは第2・3回を午前（9:30〜12:00）に別時間帯で実施予定。
+          第2・3回は高校生のみ午前（9:30〜12:00）実施。第1・4回は小中学生と合同開催。
         </div>
       </div>
     </div>
@@ -1365,43 +1349,10 @@
         </ul>
 
         <div class="license-box">
-          <div class="title">教育版マイクラのライセンスについて</div>
+          <div class="title">教育版マインクラフトの環境について</div>
           <p>
-            マイクラカップへの応募には<strong>教育版マイクラ</strong>が必要です（Switch版・Java版は不可）。
+            教育版マインクラフト（Minecraft Education）は学校経由で入手できる可能性があります。まず学校の先生に相談してみてください。手配が難しい場合は、事務局から<strong>無償貸与</strong>します。
           </p>
-          <table class="license-table">
-            <thead>
-              <tr>
-                <th>対象</th>
-                <th>方法</th>
-                <th>費用</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>公立小・中学校の<br />児童・生徒</td>
-                <td>
-                  <a
-                    href="https://mccup.jp/supportpackage/"
-                    target="_blank"
-                    rel="noopener"
-                    >マイクラカップ事務局のサポートパック</a
-                  >
-                </td>
-                <td>6,000円／ライセンス</td>
-              </tr>
-              <tr>
-                <td>〃</td>
-                <td>Microsoft Store で購入</td>
-                <td>36米ドル<br />（約5,800円）／年</td>
-              </tr>
-              <tr>
-                <td>ザベリオ学園の<br />児童・生徒</td>
-                <td>学校経由で購入</td>
-                <td>500円程度</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
 
         <div class="no-pc-box">
@@ -1431,8 +1382,7 @@
         </a>
         <div></div>
         <div class="organizer-line">
-          【主催】デジタル未来アート事業実行委員会（事務局：会津若松市情報戦略課）／NPO法人Solaris<br />
-          【共催】会津若松市　【協力】マイクラカップ運営事務局
+          【主催】NPO法人Solaris　【協力】マイクラカップ運営事務局
         </div>
       </div>
     </div>
@@ -1446,7 +1396,6 @@
         hamburger.setAttribute("aria-expanded", isOpen);
       });
 
-      // メニュー項目をタップしたら閉じる
       navMenu.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
           navMenu.classList.remove("open");
